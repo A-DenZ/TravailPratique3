@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Tp3 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Tp3 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
