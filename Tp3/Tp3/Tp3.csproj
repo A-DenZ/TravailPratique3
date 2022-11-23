@@ -12,8 +12,12 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+
     <None Remove="PageAffichageEmploye1.xaml" />
     <None Remove="PageAffichageProjets1.xaml" />
+=======
+    <None Remove="AddEmploye.xaml" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -42,12 +46,16 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+
     <Page Update="PageAffichageProjets1.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="PageAffichageEmploye1.xaml">
+=======
+    <Page Update="AddEmploye.xaml">
+
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <NavigationView x:Name="nav" PaneDisplayMode="Left" PaneTitle="Gestion de projets" IsBackButtonVisible="Collapsed" Background="#181818" Foreground="#f1f3f8" IsSettingsVisible="False" SelectionChanged="nav_SelectionChanged">
+    
+    <NavigationView x:Name="nav" PaneDisplayMode="Left" PaneTitle="Uber sur un budget" IsBackButtonVisible="Collapsed" Background="#181818" Foreground="#f1f3f8" IsSettingsVisible="False" >
         <NavigationView.MenuItems>
             <NavigationViewItem x:Name="Employes" Content="Employés" Icon="People"  Visibility="Visible"/>
             <NavigationViewItem x:Name="Projets" Content="Projets" VerticalAlignment="Bottom" Icon="Folder"/>
