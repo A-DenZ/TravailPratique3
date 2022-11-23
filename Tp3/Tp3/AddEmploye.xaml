@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="Tp3.AddEmploye"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tp3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="addMsg"/>
+            <TextBox x:Name="addMat" Header="Matricule" Width="300"/>
+            <TextBox x:Name="addFN" Header="Prenom" Width="300"/>
+            <TextBox x:Name="addLN" Header="Nom" Width="300"/>
+            <Button x:Name="addEmp" Click="addEmp_Click" Width="300" Content="Ajouter un employé" Margin="0 20 0 0"/>
+        </StackPanel>
+    </Grid>
+</Page>
