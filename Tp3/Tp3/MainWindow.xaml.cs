@@ -39,6 +39,10 @@ namespace Tp3
             {
                 mainFrame.Navigate(typeof(PageAffichageProjets1));
             }
+            else
+            {
+                mainFrame.Navigate(typeof(PageAjoutProjet));
+            }
         }
 
     }

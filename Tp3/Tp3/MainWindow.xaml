@@ -11,7 +11,7 @@
         <NavigationView.MenuItems>
             <NavigationViewItem x:Name="Employes" Content="Employés" Icon="People"  Visibility="Visible"/>
             <NavigationViewItem x:Name="Projets" Content="Projets" VerticalAlignment="Bottom" Icon="Folder"/>
-
+            <NavigationViewItem x:Name="AjoutProjet" Content="Crée un nouveau projet" VerticalAlignment="Bottom" Icon="Bullets"/>
         </NavigationView.MenuItems>
 
         <Frame x:Name="mainFrame"/>
