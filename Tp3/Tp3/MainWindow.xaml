@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     
-    <NavigationView x:Name="nav" PaneDisplayMode="Left" PaneTitle="Uber sur un budget" IsBackButtonVisible="Collapsed" Background="#181818" Foreground="#f1f3f8" IsSettingsVisible="False" >
+    <NavigationView x:Name="nav" PaneDisplayMode="Left" PaneTitle="Gestion des projets" IsBackButtonVisible="Collapsed" Background="#181818" Foreground="#f1f3f8" IsSettingsVisible="False" SelectionChanged="nav_SelectionChanged" >
         <NavigationView.MenuItems>
             <NavigationViewItem x:Name="Employes" Content="Employés" Icon="People"  Visibility="Visible"/>
             <NavigationViewItem x:Name="Projets" Content="Projets" VerticalAlignment="Bottom" Icon="Folder"/>
