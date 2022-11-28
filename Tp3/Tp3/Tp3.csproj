@@ -15,7 +15,6 @@
 
     <None Remove="PageAffichageEmploye1.xaml" />
     <None Remove="PageAffichageProjets1.xaml" />
-=======
     <None Remove="AddEmploye.xaml" />
 
   </ItemGroup>
@@ -51,15 +50,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Page Update="PageAffichageEmploye1.xaml">
-=======
-    <Page Update="AddEmploye.xaml">
-
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
   <!-- 
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
     Explorer "Package and Publish" context menu entry to be enabled for this project even if 
