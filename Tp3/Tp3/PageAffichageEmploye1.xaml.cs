@@ -7,6 +7,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -27,6 +28,31 @@ namespace Tp3
         {
             this.InitializeComponent();
             lvEmploye.ItemsSource = GestionBD.getInstance().GetEmployes();
+        }
+
+        private void toAddEmpPage_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddEmploye));
+        }
+
+        private void empSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lvEmploye.ItemsSource = GestionBD.getInstance().SearchEmploye(empSearchBox.Text);
+        }
+
+        private void toggleSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (empSearchBox.Visibility == Visibility.Collapsed)
+            {
+                empSearchBox.Visibility = Visibility.Visible;
+                toggleSearch.Content = "Fermer recherche";
+            }
+            else
+            {
+                empSearchBox.Visibility = Visibility.Collapsed;
+                toggleSearch.Content = "Rechercher";
+                lvEmploye.ItemsSource = GestionBD.getInstance().GetEmployes();
+            } 
         }
     }
 }
