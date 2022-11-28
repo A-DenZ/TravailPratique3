@@ -19,27 +19,14 @@ using Windows.Foundation.Collections;
 namespace Tp3
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : Window
+    public sealed partial class PageAffichageProjets1 : Page
     {
-        public MainWindow()
+        public PageAffichageProjets1()
         {
             this.InitializeComponent();
+            lvProjet.ItemsSource = GestionBD.getInstance().GetProjets();
         }
-
-        private void nav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
-            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-            if (item.Name == "Employes")
-            {
-                mainFrame.Navigate(typeof(PageAffichageEmploye1));
-            }
-            else if (item.Name == "Projets")
-            {
-                mainFrame.Navigate(typeof(PageAffichageProjets1));
-            }
-        }
-
     }
 }
