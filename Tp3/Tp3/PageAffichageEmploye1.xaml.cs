@@ -26,6 +26,7 @@ namespace Tp3
         public PageAffichageEmploye1()
         {
             this.InitializeComponent();
+            lvEmploye.ItemsSource = GestionBD.getInstance().GetEmployes();
         }
     }
 }

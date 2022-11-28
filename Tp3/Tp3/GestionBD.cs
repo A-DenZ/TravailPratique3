@@ -15,7 +15,7 @@ namespace Tp3
         static GestionBD gestionBD = null;
         public GestionBD()
         {
-            this.con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_eq14;Uid=1979090;Pwd=1979090;");
+            this.con = new MySqlConnection("Server=cours.cegep3r.info;Database=1979090-jay-carle-brodeur;Uid=1979090;Pwd=1979090;");
         }
 
         public static GestionBD getInstance()
@@ -155,8 +155,49 @@ namespace Tp3
         }
 
 
-        public void SearchEmploye(String s)
+
+        public ObservableCollection<Employe> GetEmployes()
         {
+            try
+            {
+                listeEmployes.Clear();
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "Select * from employe";
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Open();
+
+                MySqlDataReader r = commande.ExecuteReader();
+                while (r.Read() == true)
+                {
+                    Employe unEmploye = new Employe()
+                    {
+                        Matricule = r.GetString("matricule"),
+                        Nom = r.GetString("nom"),
+                        Prenom = r.GetString("prenom"),
+
+                    };
+
+                    listeEmployes.Add(unEmploye);
+                }
+
+                r.Close();
+                con.Close();
+
+                return listeEmployes;
+            }
+            catch (MySqlException ex)
+            {
+                return listeEmployes;
+                con.Close();
+            }
+        }
+
+            public void SearchEmploye(String s)
+            {
 
             listeProjets.Clear();
             MySqlCommand commande = new MySqlCommand();
