@@ -28,5 +28,30 @@ namespace Tp3
             this.InitializeComponent();
             lvProjet.ItemsSource = GestionBD.getInstance().GetProjets();
         }
+
+        private void projSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lvProjet.ItemsSource = GestionBD.getInstance().SearchProjet(projSearchBox.Text);
+        }
+
+        private void toggleProjSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (projSearchBox.Visibility == Visibility.Collapsed)
+            {
+                projSearchBox.Visibility = Visibility.Visible;
+                toggleProjSearch.Content = "Fermer recherche";
+            }
+            else
+            {
+                projSearchBox.Visibility = Visibility.Collapsed;
+                toggleProjSearch.Content = "Rechercher";
+                lvProjet.ItemsSource = GestionBD.getInstance().GetProjets();
+            }
+        }
+
+        private void toAddProjPage_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PageAjoutProjet));
+        }
     }
 }

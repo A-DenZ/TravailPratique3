@@ -56,6 +56,12 @@ namespace Tp3
             {
                 tblErreurEmploye.Visibility = Visibility.Visible;
             }
+            if (validateBudg() < 10000 || validateBudg() > 100000)
+            {
+                valide = false;
+                tblErreurBudget.Visibility = Visibility.Visible;
+            }
+            
 
 
             
@@ -76,15 +82,15 @@ namespace Tp3
 
         public int validateBudg()
         {
-            int prixBudg = 0;
+            
             try
             {
-                prixBudg = Convert.ToInt32(Budget.Text);
+                int prixBudg = Convert.ToInt32(Budget.Text);
                 return prixBudg;
             }
             catch (Exception ex)
             {
-                return prixBudg;
+                return 0;
             }
         }
 

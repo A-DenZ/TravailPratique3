@@ -37,7 +37,7 @@ namespace Tp3
 
         private void empSearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lvEmploye.ItemsSource = GestionBD.getInstance().SearchEmploye(empSearchBox.Text);
+            lvEmploye.ItemsSource = GestionBD.getInstance().SearchProjet(empSearchBox.Text);
         }
 
         private void toggleSearch_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace Tp3
             {
                 empSearchBox.Visibility = Visibility.Collapsed;
                 toggleSearch.Content = "Rechercher";
-                lvEmploye.ItemsSource = GestionBD.getInstance().GetEmployes();
+                lvEmploye.ItemsSource = GestionBD.getInstance().GetProjets();
             } 
         }
     }
