@@ -57,7 +57,7 @@ namespace Tp3
                 con.Close();
                 return retour;
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 con.Close();
                 return 0;
@@ -81,11 +81,11 @@ namespace Tp3
 
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                commande.CommandText = "insert into projet values(@numero, @date, @descriotion,@employe,@budget) ";
+                commande.CommandText = "insert into projet values(@numero,@debut,@budget,@description,@employe) ";
 
 
                 commande.Parameters.AddWithValue("@numero", p.Numero);
-                commande.Parameters.AddWithValue("@date", p.Date);
+                commande.Parameters.AddWithValue("@debut", p.Date);
                 commande.Parameters.AddWithValue("@description", p.Description);
                 commande.Parameters.AddWithValue("@employe", p.Employe);
                 commande.Parameters.AddWithValue("@budget", p.Budget);
@@ -101,7 +101,7 @@ namespace Tp3
                 con.Close();
                 return retour;
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 con.Close();
                 return 0;
@@ -147,7 +147,7 @@ namespace Tp3
 
                 return listeProjets;
             }
-            catch(MySqlException ex)
+            catch(Exception ex)
             {
                 return listeProjets;
                 con.Close();
@@ -189,7 +189,7 @@ namespace Tp3
 
                 return listeEmployes;
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 return listeEmployes;
                 con.Close();
@@ -263,6 +263,10 @@ namespace Tp3
 
             ;
         }
+
+
+
+
 
 
 
