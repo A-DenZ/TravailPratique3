@@ -24,7 +24,7 @@
         <Button x:Name="toAddEmpPage" Content="Ajouter" Click="toAddEmpPage_Click" Grid.Column="1" Grid.Row="0"/>
         <Button x:Name="toggleSearch" Content="Rechercher" Click="toggleSearch_Click" Grid.Column="2" Grid.Row="0"/>
         <TextBox x:Name="empSearchBox" Visibility="Collapsed" Height="30" Margin="0 0 20 0" TextChanged="empSearchBox_TextChanged" Grid.Column="3" Grid.Row="0"/>
-        <ListView x:Name="lvEmploye" Grid.Row="1" Grid.ColumnSpan="3">
+        <ListView x:Name="lvEmploye" Grid.Row="1" Grid.ColumnSpan="4">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Employe">
 

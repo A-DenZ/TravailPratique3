@@ -72,8 +72,11 @@ namespace Tp3
 
             // displaying action state message
             addMsg.Text = submitMsg;
-            await Task.Delay(750);
-            this.Frame.Navigate(typeof(PageAffichageEmploye1));
+            if (submitMsg == $"L'employé {mat} à été créé. avec succès.")
+            {
+                await Task.Delay(750);
+                this.Frame.Navigate(typeof(PageAffichageEmploye1));
+            }
         }
     }
 }
