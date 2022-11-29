@@ -26,6 +26,7 @@ namespace Tp3
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(PageAffichageEmploye1));
         }
 
         private void nav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

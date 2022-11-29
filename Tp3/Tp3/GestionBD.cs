@@ -196,13 +196,12 @@ namespace Tp3
             }
         }
 
-            public void SearchEmploye(String s)
+            public ObservableCollection<Employe> SearchEmploye(String s)
             {
-
-            listeProjets.Clear();
+            ObservableCollection<Employe> newList = new ObservableCollection<Employe>();
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "Select * from employe where nom ='" + s + "'";
+            commande.CommandText = $"Select * from employe where nom LIKE '{s}%' OR prenom LIKE '{s}%' OR matricule LIKE '{s}%'";
             if (con.State == System.Data.ConnectionState.Open)
             {
                 con.Close();
@@ -220,23 +219,23 @@ namespace Tp3
                     
                 };
 
-                listeEmployes.Add(unEmploye);
+                newList.Add(unEmploye);
             }
 
             r.Close();
             con.Close();
 
-            ;
+            return newList;
         }
 
 
-        public void SearchProjet(String s)
+        public ObservableCollection<Projet> SearchProjet(String s)
         {
 
-            listeProjets.Clear();
+            ObservableCollection<Projet> newList = new ObservableCollection<Projet>();
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "Select * from projet where debut ='" + s + "'";
+            commande.CommandText = $"Select * from projet where debut LIKE '%{s}%'";
             if (con.State == System.Data.ConnectionState.Open)
             {
                 con.Close();
@@ -256,13 +255,13 @@ namespace Tp3
 
                 };
 
-                listeProjets.Add(unProjet);
+                newList.Add(unProjet);
             }
 
             r.Close();
             con.Close();
 
-            ;
+            return newList;
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -28,7 +29,7 @@ namespace Tp3
             this.InitializeComponent();
         }
 
-        private void addEmp_Click(object sender, RoutedEventArgs e)
+        private async void addEmp_Click(object sender, RoutedEventArgs e)
         {
             // action state message
             string submitMsg = "";
@@ -71,6 +72,11 @@ namespace Tp3
 
             // displaying action state message
             addMsg.Text = submitMsg;
+            if (submitMsg == $"L'employé {mat} à été créé. avec succès.")
+            {
+                await Task.Delay(750);
+                this.Frame.Navigate(typeof(PageAffichageEmploye1));
+            }
         }
     }
 }
